@@ -351,3 +351,7 @@ textarea {
 
 .probootstrap-overflow-hidden {
   overflow: hidden; }
+
+.rounded {
+  border-radius: 50% !important;
+}
