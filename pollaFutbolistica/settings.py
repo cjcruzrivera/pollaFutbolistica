@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'login'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'pollaFutbolistica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +120,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(
+    os.path.dirname(__file__)), 'static', 'media')
+STATIC_ROOT = os.path.join(os.path.dirname(
+    os.path.dirname(__file__)), 'static', 'static-only')
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
